@@ -7,7 +7,6 @@ export const options = {
 }
 
 export default  function () {
-  // http.get('https://test.k6.io');
-  http.get('https://archify:archify@www.bluprindev.com/id/');
+  http.get('https://test.k6.io');
   sleep(1);
 }

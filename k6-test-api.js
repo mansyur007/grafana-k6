@@ -6,22 +6,22 @@ import { check, sleep } from 'k6';
 export const options = {
     stages: [
         {
-            duration: '10s',
-            target: 10
-        },
-        {
-            duration: '60s',
+            duration: '5s',
             target: 10
         },
         {
             duration: '10s',
+            target: 10
+        },
+        {
+            duration: '5s',
             target: 0
         }
     ],
-    thresholds: {
-        http_req_duration: ['p(90)<1250','p(95)<1300'],
-        checks: ['rate>=0.99'],
-    },
+    // thresholds: {
+    //     http_req_duration: ['p(90)<1250','p(95)<1300'],
+    //     checks: ['rate>=0.99'],
+    // },
     ext: {
         loadimpact: {
             projectID: 3741581

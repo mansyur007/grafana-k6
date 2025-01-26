@@ -21,7 +21,7 @@ export const options = {
 }
 
 export default  function () {
-  const url = 'https://sso.bpjsketenagakerjaan.go.id/'
+  const url = 'https://test-api.k6.io/'
   http.get(url);
   sleep(1);
 }
