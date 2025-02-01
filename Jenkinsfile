@@ -1,30 +1,24 @@
 pipeline {
-    agent any  // Gunakan agent apa pun yang tersedia di Jenkins
+    agent any
+    tools {
+        nodejs 'NodeJS 18'  // Sesuaikan dengan nama Node.js di Jenkins
+    }
     stages {
         stage('Checkout') {
             steps {
-                // Klon repository GitHub
                 git branch: 'main', url: 'https://github.com/mansyur007/grafana-k6.git'
             }
         }
         stage('Install Dependencies') {
             steps {
-                // Install dependensi (jika diperlukan)
                 sh 'echo "Installing dependencies..."'
-                sh 'npm install'  // Contoh untuk proyek Node.js
+                sh 'npm install'
             }
         }
         stage('Run Tests with k6') {
             steps {
-                // Jalankan tes menggunakan k6
                 sh 'echo "Running k6 tests..."'
-                sh 'k6 run k6-test-api.js'  // Ganti dengan skrip k6 Anda
-            }
-        }
-        stage('Deploy') {
-            steps {
-                // Langkah deploy (opsional)
-                sh 'echo "Deploying application..."'
+                sh 'k6 run script.js'  // Ganti dengan skrip k6 Anda
             }
         }
     }
