@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        nodejs 'NodeJS 18'  // Sesuaikan dengan nama Node.js di Jenkins
+        nodejs 'nodejs'  // Sesuaikan dengan nama Node.js di Jenkins
     }
     stages {
         stage('Checkout') {
