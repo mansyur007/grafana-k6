@@ -9,12 +9,6 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/mansyur007/grafana-k6.git'
             }
         }
-        stage('Install Dependencies') {
-            steps {
-                sh 'echo "Installing dependencies..."'
-                sh 'npm install'
-            }
-        }
         stage('Run Tests with k6') {
             steps {
                 sh 'echo "Running k6 tests..."'
