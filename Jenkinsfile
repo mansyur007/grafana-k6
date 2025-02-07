@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    docker run --rm -v $PWD:/scripts grafana/k6 run /scripts/k6-test-api.js -o cloud --token $K6_TOKEN
+                    docker run --rm -v $PWD:/scripts -e K6_TOKEN=$K6_TOKEN grafana/k6 run /scripts/k6-test-api.js -o cloud
                     '''
                 }
             }
