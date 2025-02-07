@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+    environment {
+        GITHUB_CREDENTIALS = credentials('jenkins-github')
+    }
+
+    
+
     stages {
         stage('Checkout') {
             steps {
