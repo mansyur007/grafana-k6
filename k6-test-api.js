@@ -22,10 +22,8 @@ export const options = {
     //     http_req_duration: ['p(90)<1250','p(95)<1300'],
     //     checks: ['rate>=0.99'],
     // },
-    ext: {
-        loadimpact: {
-            projectID: 3741581
-        }
+    cloud: {
+        projectID: 3741581,
     }
 }
 
