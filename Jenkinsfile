@@ -12,8 +12,8 @@ pipeline {
         stage('Run k6 Performance Test') {
             steps {
                 script {
-                    // Run the k6 test with the correct file path
-                    sh 'docker run --rm -v $PWD:/scripts grafana/k6 run /scripts/k6-test-api.js'
+                    // Run k6 test with a properly resolved workspace path
+                    sh 'docker run --rm -v ${WORKSPACE}:/scripts grafana/k6 run /scripts/k6-test-api.js'
                 }
             }
         }
