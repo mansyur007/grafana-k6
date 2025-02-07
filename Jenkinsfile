@@ -5,8 +5,6 @@ pipeline {
         GITHUB_CREDENTIALS = credentials('jenkins-github')
     }
 
-    
-
     stages {
         stage('Checkout') {
             steps {
