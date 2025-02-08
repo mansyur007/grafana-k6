@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git branch: 'staging', url: 'https://github.com/mansyur007/grafana-k6.git'
+                    url: 'https://github.com/mansyur007/grafana-k6.git'
                 }
             }
         }
