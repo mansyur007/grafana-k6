@@ -10,6 +10,10 @@ pipeline {
         K6_TOKEN = credentials('jenkins-k6') // token id from Jenkins
     }
 
+    triggers {
+        pollSCM('H/5 * * * *') // every 5 minutes
+    }
+
     stages {
         stage('Checkout') {
             steps {
