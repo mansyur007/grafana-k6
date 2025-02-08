@@ -10,12 +10,12 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git branch: 'main', url: 'https://github.com/mansyur007/grafana-k6.git'
+                    git branch: 'staging', url: 'https://github.com/mansyur007/grafana-k6.git'
                 }
             }
         }
 
-        stage('Run k6 Performance Test') {
+        stage('Run k6 Performance Test - from dev') {
             steps {
                 script {
                     sh '''
