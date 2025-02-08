@@ -1,16 +1,20 @@
 pipeline {
     agent any
 
+    parameters {
+        string(name: 'BRANCH', defaultValue: 'dev', description: 'Branch to build')
+    }
+
     environment {
-        GITHUB_CREDENTIALS = credentials('jenkins-github') //token id from jenkins
-        K6_TOKEN = credentials('jenkins-k6') //token id from jenkins
+        GITHUB_CREDENTIALS = credentials('jenkins-github') // token id from Jenkins
+        K6_TOKEN = credentials('jenkins-k6') // token id from Jenkins
     }
 
     stages {
         stage('Checkout') {
             steps {
                 script {
-                    url: 'https://github.com/mansyur007/grafana-k6.git'
+                    git branch: params.BRANCH, url: 'https://github.com/mansyur007/grafana-k6.git'
                 }
             }
         }
