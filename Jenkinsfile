@@ -8,7 +8,7 @@ pipeline {
     environment {
         GITHUB_CREDENTIALS = credentials('jenkins-github') // token id from Jenkins
         K6_TOKEN = credentials('jenkins-k6') // token id from Jenkins
-    }
+    } // changes here - trigger commit
 
     stages {
         stage('Checkout') {
